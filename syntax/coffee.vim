@@ -50,8 +50,8 @@ hi def link coffeeExtendedOp coffeeOperator
 
 " This is separate from `coffeeExtendedOp` to help differentiate commas from
 " dots.
-syn match coffeeSpecialOp /[,;]/ display
-hi def link coffeeSpecialOp SpecialChar
+" syn match coffeeSpecialOp /[,;]/ display
+" hi def link coffeeSpecialOp SpecialChar
 
 syn match coffeeBoolean /\<\%(true\|on\|yes\|false\|off\|no\)\>/ display
 hi def link coffeeBoolean Boolean
@@ -61,7 +61,7 @@ hi def link coffeeGlobal Type
 
 " A special variable
 syn match coffeeSpecialVar /\<\%(this\|prototype\|arguments\)\>/ display
-hi def link coffeeSpecialVar Special
+hi def link coffeeSpecialVar Identifier
 
 " An @-variable
 syn match coffeeSpecialIdent /@\%(\%(\I\|\$\)\%(\i\|\$\)*\)\?/ display
@@ -196,7 +196,7 @@ syn region coffeeParens matchgroup=coffeeParen start=/(/ end=/)/
 \                       contains=@coffeeAll
 
 " These are highlighted the same as commas since they tend to go together.
-hi def link coffeeBlock coffeeSpecialOp
+hi def link coffeeBlock coffeeSpecialIdent
 hi def link coffeeBracket coffeeBlock
 hi def link coffeeCurly coffeeBlock
 hi def link coffeeParen coffeeBlock
